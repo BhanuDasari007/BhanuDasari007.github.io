@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhanu Prasad Reddy Dasari | Senior Salesforce QA Engineer</title>
+  <meta name="description" content="Salesforce QA engineer with 5 years of experience in Consumer Goods Cloud, Retail Execution and Trade Promotion Management. Based in Hyderabad." />
+  <meta name="theme-color" content="#060B19" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bhanu Prasad Reddy Dasari | Senior Salesforce QA Engineer" />
+  <meta property="og:description" content="Salesforce QA for Consumer Goods Cloud, Retail Execution and Trade Promotion Management." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2338BDF8'/><text x='50' y='66' font-size='46' font-weight='800' text-anchor='middle' fill='%23060B19' font-family='sans-serif'>BD</text></svg>" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            slate: {
+              950: '#060B19',
+              900: '#0B1221',
+              850: '#10192D',
+              800: '#16223A',
+            },
+            sf: {
+              blue: '#00A1E0',
+              sky: '#38BDF8',
+              emerald: '#10B981',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom subtle animations and print optimization */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .glass-card {
+      background: rgba(16, 25, 45, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(56, 189, 248, 0.14);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+
+    .hero-grid-bg {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+    }
+
+    /* Clean Executive Resume Print Styles */
+    @media print {
+      @page {
+        margin: 0.45in;
+        size: A4;
+      }
+
+      body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+        font-size: 10.5pt !important;
+        line-height: 1.4 !important;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .print-only {
+        display: block !important;
+      }
+
+      .glass-card, section, div {
+        background: transparent !important;
+        border-color: #cbd5e1 !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        color: #0f172a !important;
+      }
+
+      h1, h2, h3, h4, p, span, li, a {
+        color: #0f172a !important;
+      }
+
+      .text-sky-400, .text-emerald-400, .text-sf-blue {
+        color: #0369a1 !important;
+      }
+
+      .print-compact {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
+      }
+
+      .skill-card {
+        display: block !important;
+        opacity: 1 !important;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-sky-500/30 selection:text-sky-200 overflow-x-hidden">
+
+  <!-- Toast Notification -->
+  <div id="toast" role="status" aria-live="polite" class="no-print fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="flex items-center gap-3 bg-slate-800 border border-emerald-500/40 text-slate-100 px-4 py-3 rounded-xl shadow-2xl shadow-emerald-950/50">
+      <span class="flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </span>
+      <span id="toast-message" class="text-sm font-medium">Email copied to clipboard!</span>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation Bar -->
+  <header class="no-print sticky top-0 z-40 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Brand / Monogram -->
+        <a href="#top" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-emerald-500 flex items-center justify-center text-slate-950 font-extrabold text-sm tracking-tight shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform">
+            BD
+          </div>
+          <div class="hidden sm:block">
+            <span class="font-bold text-slate-100 tracking-tight text-sm block leading-none">Bhanu Dasari</span>
+            <span class="text-[11px] font-mono text-sky-400">Salesforce QA Engineer</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+          <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
+          <a href="#impact" class="hover:text-sky-400 transition-colors">Impact</a>
+          <a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a>
+          <a href="#skills" class="hover:text-sky-400 transition-colors">Skills</a>
+          <a href="#credentials" class="hover:text-sky-400 transition-colors">Credentials</a>
+          <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
+        </nav>
+
+        <!-- Action Buttons -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button onclick="copyEmail()" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-800 border border-slate-700/80 hover:border-sky-500/40 text-xs sm:text-sm font-medium text-slate-200 transition-all cursor-pointer" title="Copy bhanudasari54@gmail.com">
+            <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+            <span class="hidden sm:inline">Copy Email</span>
+          </button>
+
+          <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-500 hover:from-sky-400 hover:to-emerald-400 text-slate-950 font-semibold text-xs sm:text-sm shadow-lg shadow-sky-500/20 transition-all cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>Download / Print Resume</span>
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 hover:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-900/95 px-4 py-3 space-y-2">
+      <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-sky-400">About</a>
+      <a href="#impact" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-sky-400">Impact Highlights</a>
+      <a href="#experience" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-sky-400">Experience</a>
+      <a href="#skills" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-sky-400">Technical Skills</a>
+      <a href="#credentials" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-sky-400">Achievements & Certifications</a>
+      <a href="#contact" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-sky-400">Contact</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="top" class="hero-grid-bg">
+
+    <!-- Hero Section -->
+    <section id="about" class="relative pt-12 pb-10 sm:pt-20 sm:pb-16 print-compact">
+      <!-- Ambient Decorative Glow -->
+      <div class="no-print pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-72 bg-gradient-to-tr from-sky-500/15 via-emerald-500/10 to-transparent blur-3xl -z-10"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
+        <!-- Status Pill -->
+        <div class="no-print inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-sky-500/30 text-xs font-mono text-sky-300 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>5+ Years Enterprise Salesforce &amp; QA Engineering</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Left Main Intro -->
+          <div class="lg:col-span-8 space-y-5">
+            <div>
+              <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                Bhanu Prasad Reddy Dasari
+              </h1>
+              <p class="mt-2 text-xl sm:text-2xl font-semibold bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">
+                Senior Salesforce QA Engineer
+              </p>
+            </div>
+
+            <!-- Specialties Tagline Badges -->
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg bg-sky-500/10 border border-sky-500/25 text-sky-300 text-xs sm:text-sm font-medium">Salesforce Testing</span>
+              <span class="px-3 py-1 rounded-lg bg-sky-500/10 border border-sky-500/25 text-sky-300 text-xs sm:text-sm font-medium">Consumer Goods Cloud</span>
+              <span class="px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-xs sm:text-sm font-medium">TPM</span>
+              <span class="px-3 py-1 rounded-lg bg-sky-500/10 border border-sky-500/25 text-sky-300 text-xs sm:text-sm font-medium">Integration Testing</span>
+              <span class="px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-xs sm:text-sm font-medium">Playwright</span>
+            </div>
+
+            <!-- Professional Summary -->
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Salesforce QA professional with 5 years of experience in enterprise Salesforce implementations, specializing in Consumer Goods Cloud, Retail Execution, and Trade Promotion Management (TPM). Experienced in Functional, SIT, Regression, Integration, API, Mobility, KPI, and End-to-End testing across multiple release cycles. Strong hands-on experience with SOQL, Postman, Jira, SAP data validation, Salesforce integration testing, defect lifecycle management, release validation, and stakeholder collaboration. Led a 6-member testing team while continuing hands-on QA activities. Currently developing Playwright automation capabilities using JavaScript.
+            </p>
+          </div>
+
+          <!-- Right Contact Card -->
+          <div class="lg:col-span-4">
+            <div class="glass-card rounded-2xl p-5 sm:p-6 space-y-4 shadow-xl">
+              <h2 class="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">Contact &amp; Location</h2>
+              
+              <div class="space-y-3 text-sm">
+                <!-- Email -->
+                <div class="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-slate-900/70 border border-slate-800">
+                  <div class="flex items-center gap-2.5 min-w-0">
+                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <a href="mailto:bhanudasari54@gmail.com" class="text-slate-200 hover:text-sky-400 truncate font-medium">bhanudasari54@gmail.com</a>
+                  </div>
+                  <button onclick="copyEmail()" class="no-print text-xs font-mono text-sky-400 hover:text-sky-300 px-2 py-1 rounded bg-sky-500/10 shrink-0 cursor-pointer">
+                    Copy
+                  </button>
+                </div>
+
+                <!-- Phone -->
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-900/70 border border-slate-800">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <a href="tel:+918466014365" class="text-slate-200 hover:text-emerald-400 font-medium">+91 8466014365</a>
+                </div>
+
+                <!-- Location -->
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-900/70 border border-slate-800">
+                  <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span class="text-slate-200 font-medium">Hyderabad, Telangana, India</span>
+                </div>
+              </div>
+
+              <!-- Quick Print / Export CTA -->
+              <div class="no-print pt-1">
+                <button onclick="window.print()" class="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-emerald-500/40 text-slate-200 text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer">
+                  <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                  </svg>
+                  <span>Print / Save PDF Resume</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Metrics / Highlights Banner -->
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+          <div class="glass-card rounded-2xl p-4 sm:p-5 text-center sm:text-left transition-transform hover:-translate-y-0.5">
+            <div class="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono">5+</div>
+            <div class="mt-1 text-xs sm:text-sm font-semibold text-slate-100">Years Experience</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">Enterprise Salesforce QA</div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-4 sm:p-5 text-center sm:text-left transition-transform hover:-translate-y-0.5">
+            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">3</div>
+            <div class="mt-1 text-xs sm:text-sm font-semibold text-slate-100">Enterprise Implementations</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">2 TPM, 1 CGC / REX</div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-4 sm:p-5 text-center sm:text-left transition-transform hover:-translate-y-0.5">
+            <div class="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono">7+</div>
+            <div class="mt-1 text-xs sm:text-sm font-semibold text-slate-100">Release Cycles</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">End-to-End Supported</div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-4 sm:p-5 text-center sm:text-left transition-transform hover:-translate-y-0.5">
+            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">6</div>
+            <div class="mt-1 text-xs sm:text-sm font-semibold text-slate-100">Member QA Team</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">Led While Hands-On</div>
+          </div>
+
+          <div class="col-span-2 sm:col-span-1 glass-card rounded-2xl p-4 sm:p-5 text-center sm:text-left transition-transform hover:-translate-y-0.5">
+            <div class="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono">100+</div>
+            <div class="mt-1 text-xs sm:text-sm font-semibold text-slate-100">Defects Managed</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">Per Project in Jira</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project & Domain Impact Highlight Cards -->
+    <section id="impact" class="py-10 sm:py-14 border-t border-slate-800/70 print-compact">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-2">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">Core Focus Areas</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Enterprise Implementation &amp; QA Impact</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+            Supporting stable, well-tested releases across FMCG, Trade Promotion Management, and Retail Execution implementations.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Impact Card 1 -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition-all hover:-translate-y-1">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono text-sky-400">2 Implementations • FMCG</span>
+              <h3 class="text-lg font-bold text-white mt-1">Trade Promotion Management (TPM)</h3>
+              <p class="text-sm text-slate-300 mt-2.5 leading-relaxed">
+                Validated promotion planning, KPI calculations, and measurement codes across 2 enterprise TPM implementations and multiple release cycles.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300">KPI Validation</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300">SOQL</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300">SIT &amp; E2E</span>
+            </div>
+          </div>
+
+          <!-- Impact Card 2 -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition-all hover:-translate-y-1">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono text-emerald-400">Consumer Goods Cloud • REX</span>
+              <h3 class="text-lg font-bold text-white mt-1">Retail Execution &amp; Mobility QA</h3>
+              <p class="text-sm text-slate-300 mt-2.5 leading-relaxed">
+                Functional, Mobility, and Regression testing for a Consumer Goods Cloud / Retail Execution implementation, supporting end-to-end business journeys.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300">Mobility Testing</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300">CGC Accredited</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300">Regression</span>
+            </div>
+          </div>
+
+          <!-- Impact Card 3 -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition-all hover:-translate-y-1">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono text-sky-400">API, SAP &amp; Playwright JS</span>
+              <h3 class="text-lg font-bold text-white mt-1">SAP Integrations &amp; Test Automation</h3>
+              <p class="text-sm text-slate-300 mt-2.5 leading-relaxed">
+                Verified source-to-target SAP data accuracy and request/response payloads in Postman, and built Playwright JavaScript test scripts with assertions and locator strategies.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300">Postman APIs</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300">SAP Validation</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300">Playwright JS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="py-10 sm:py-14 border-t border-slate-800/70 print-compact">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <span class="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">Career Track</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Professional Experience</h2>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+          <!-- Top Accent Line -->
+          <div class="no-print absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 via-emerald-400 to-sky-500"></div>
+
+          <!-- Role Header -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-slate-800">
+            <div>
+              <div class="flex flex-wrap items-center gap-2.5">
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Salesforce QA Tester</h3>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                  Team Lead (6 Members)
+                </span>
+              </div>
+              <p class="text-base font-semibold text-sky-400 mt-1">
+                Accenture <span class="text-slate-400 font-normal">| Hyderabad, Telangana</span>
+              </p>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-700/80 text-xs sm:text-sm font-mono text-slate-300 self-start sm:self-center">
+              <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>Sep 2021 – Present</span>
+            </div>
+          </div>
+
+          <!-- Detailed Responsibilities List -->
+          <ul class="mt-6 space-y-3.5 text-sm sm:text-[15px] text-slate-300 leading-relaxed">
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-sky-400 shrink-0"></span>
+              <span>Delivered QA across <strong class="text-white font-semibold">3 enterprise Salesforce implementations</strong>, including <strong class="text-white font-semibold">2 Trade Promotion Management (TPM)</strong> projects and a <strong class="text-white font-semibold">Consumer Goods Cloud / Retail Execution</strong> implementation, supporting <strong class="text-white font-semibold">7+ release cycles</strong>.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+              <span>Performed Functional, SIT, Regression, Integration, Smoke, Mobility, KPI, and End-to-End testing for FMCG business processes, writing and executing test cases, scenarios, and test data, and working with BAs, developers, and stakeholders to clarify requirements.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-sky-400 shrink-0"></span>
+              <span>Managed the defect lifecycle for <strong class="text-white font-semibold">100+ defects per project</strong> in <strong class="text-white font-semibold">Jira</strong>: analysis, prioritization, triage, retesting, and closure validation.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+              <span>Validated APIs and integrations with <strong class="text-white font-semibold">Postman</strong> (request/response payloads, measurement codes) and checked <strong class="text-white font-semibold">SAP data</strong> accuracy between Salesforce and external systems, using <strong class="text-white font-semibold">SOQL</strong> for data validation.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-sky-400 shrink-0"></span>
+              <span>Led a <strong class="text-white font-semibold">6-member QA team</strong>: work allocation, test execution, defect triage, status reporting, and release readiness, while staying hands-on and supporting smoke, regression, and release validation during deployments.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+              <span>Developing <strong class="text-white font-semibold">Playwright</strong> automation in <strong class="text-white font-semibold">JavaScript</strong>, including test scripts, assertions, and locator strategies, to extend regression coverage for web applications.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Section with Interactive Category Filters -->
+    <section id="skills" class="py-10 sm:py-14 border-t border-slate-800/70 print-compact">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">Capabilities Matrix</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Technical Skills &amp; Domain Expertise</h2>
+          </div>
+
+          <!-- Interactive Filter Tabs -->
+          <div id="skill-filters" class="no-print flex flex-wrap gap-2" role="group" aria-label="Skill category filters">
+            <button data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-sky-500 text-slate-950 shadow-md shadow-sky-500/20 transition-all cursor-pointer">
+              All Categories
+            </button>
+            <button data-filter="salesforce" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-300 hover:text-white border border-slate-700 transition-all cursor-pointer">
+              Salesforce
+            </button>
+            <button data-filter="testing" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-300 hover:text-white border border-slate-700 transition-all cursor-pointer">
+              Testing &amp; QA
+            </button>
+            <button data-filter="integration" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-300 hover:text-white border border-slate-700 transition-all cursor-pointer">
+              API &amp; Integration
+            </button>
+            <button data-filter="automation" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-300 hover:text-white border border-slate-700 transition-all cursor-pointer">
+              Automation
+            </button>
+            <button data-filter="tools" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-300 hover:text-white border border-slate-700 transition-all cursor-pointer">
+              Tools &amp; Domain
+            </button>
+          </div>
+        </div>
+
+        <!-- Skills Grid -->
+        <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+          <!-- Category 1: Salesforce -->
+          <div data-category="salesforce" class="skill-card glass-card rounded-2xl p-6 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-lg bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+              </div>
+              <h3 class="text-base font-bold text-white">Salesforce Ecosystem</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-sky-300">Salesforce Testing</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-sky-300">Consumer Goods Cloud</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-sky-300">Retail Execution (REX)</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-sky-300">Trade Promotion Management (TPM)</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-mono text-emerald-300">SOQL</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Testing -->
+          <div data-category="testing" class="skill-card glass-card rounded-2xl p-6 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="text-base font-bold text-white">Testing Methodologies</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Functional</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">System</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-emerald-300">SIT</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-emerald-300">Regression</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Integration</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Smoke</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-sky-300">End-to-End</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Mobility</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">KPI</span>
+            </div>
+          </div>
+
+          <!-- Category 3: QA Activities -->
+          <div data-category="testing" class="skill-card glass-card rounded-2xl p-6 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-lg bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 class="text-base font-bold text-white">QA Lifecycle Activities</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Test Case Design</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Test Data Preparation</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Test Execution</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-sky-300">Defect Lifecycle Management</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Retesting</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-emerald-300">Deployment &amp; Release Validation</span>
+            </div>
+          </div>
+
+          <!-- Category 4: API & Integration -->
+          <div data-category="integration" class="skill-card glass-card rounded-2xl p-6 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                </svg>
+              </div>
+              <h3 class="text-base font-bold text-white">API &amp; Data Integration</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-mono text-emerald-300">Postman</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">API Validation</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Request/Response Validation</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Integration Data Validation</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-sky-300">SAP Data Validation</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Source-to-Target Validation</span>
+            </div>
+          </div>
+
+          <!-- Category 5: Automation -->
+          <div data-category="automation" class="skill-card glass-card rounded-2xl p-6 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-lg bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 class="text-base font-bold text-white">Test Automation</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-mono text-emerald-300">Playwright</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-mono text-sky-300">JavaScript</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Test Scripts</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Assertions</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-200">Locator Strategies</span>
+            </div>
+          </div>
+
+          <!-- Category 6: Tools & Domain -->
+          <div data-category="tools" class="skill-card glass-card rounded-2xl p-6 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+              <h3 class="text-base font-bold text-white">Tools &amp; Industry Domain</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-mono text-sky-300">Jira</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-mono text-sky-300">Postman</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-mono text-sky-300">Salesforce</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-emerald-300">Consumer Goods</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-emerald-300">Retail Execution</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-emerald-300">Trade Promotion Management</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements, Certifications & Education Section -->
+    <section id="credentials" class="py-10 sm:py-14 border-t border-slate-800/70 print-compact">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+
+        <!-- Certifications (Verified Credential Badges) -->
+        <div>
+          <span class="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">Credentials</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1 mb-6">Salesforce Certifications</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Cert 1 -->
+            <div class="glass-card rounded-2xl p-5 flex items-start gap-4 border-l-4 border-l-sky-400">
+              <div class="w-11 h-11 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <div>
+                <span class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-400 uppercase tracking-wide">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                  Certification
+                </span>
+                <h3 class="text-base font-bold text-white mt-0.5">Salesforce Certified Administrator</h3>
+                <p class="text-xs text-slate-400 mt-1">Salesforce Platform &amp; Security</p>
+              </div>
+            </div>
+
+            <!-- Cert 2 -->
+            <div class="glass-card rounded-2xl p-5 flex items-start gap-4 border-l-4 border-l-emerald-400">
+              <div class="w-11 h-11 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <div>
+                <span class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-400 uppercase tracking-wide">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                  Certification
+                </span>
+                <h3 class="text-base font-bold text-white mt-0.5">Consumer Goods Cloud Accredited Professional</h3>
+                <p class="text-xs text-slate-400 mt-1">Retail Execution &amp; FMCG Cloud</p>
+              </div>
+            </div>
+
+            <!-- Cert 3 -->
+            <div class="glass-card rounded-2xl p-5 flex items-start gap-4 border-l-4 border-l-sky-400">
+              <div class="w-11 h-11 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <div>
+                <span class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-400 uppercase tracking-wide">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                  Certification
+                </span>
+                <h3 class="text-base font-bold text-white mt-0.5">Salesforce AI Associate</h3>
+                <p class="text-xs text-slate-400 mt-1">Enterprise AI &amp; CRM Capabilities</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Achievements & Education Two-Column Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- Key Achievements -->
+          <div class="lg:col-span-7 space-y-4">
+            <div>
+              <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">Recognition</span>
+              <h2 class="text-2xl font-bold text-white mt-1">Key Achievements</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Apex Award -->
+              <div class="glass-card rounded-2xl p-5">
+                <div class="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-bold text-white">Apex Award</h3>
+                <p class="text-sm text-slate-300 mt-1.5 leading-relaxed">
+                  Recognized for outstanding performance and contribution to project delivery excellence.
+                </p>
+              </div>
+
+              <!-- ACE Award -->
+              <div class="glass-card rounded-2xl p-5">
+                <div class="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-bold text-white">ACE Award</h3>
+                <p class="text-sm text-slate-300 mt-1.5 leading-relaxed">
+                  Recognized for applying new IT skills to drive impactful business outcomes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="lg:col-span-5 space-y-4">
+            <div>
+              <span class="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">Academic Background</span>
+              <h2 class="text-2xl font-bold text-white mt-1">Education</h2>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    </svg>
+                  </div>
+                  <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-slate-300">
+                    Jul 2021
+                  </span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-white">B.Tech - Mechanical Engineering</h3>
+                <p class="text-sm text-sky-400 font-medium mt-1">Anurag Group of Institutions</p>
+                <p class="text-xs text-slate-400 mt-0.5">Hyderabad, Telangana</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Clean Executive Footer -->
+  <footer id="contact" class="border-t border-slate-800/80 bg-slate-950 py-8 print-compact">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-center sm:text-left">
+        <p class="text-sm font-semibold text-slate-200">Bhanu Prasad Reddy Dasari</p>
+        <p class="text-xs text-slate-400 mt-0.5">Senior Salesforce QA Engineer • Hyderabad, Telangana, India</p>
+      </div>
+
+      <div class="no-print flex flex-wrap items-center justify-center gap-3">
+        <button onclick="copyEmail()" class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-medium text-slate-300 hover:text-sky-400 transition-colors cursor-pointer">
+          bhanudasari54@gmail.com
+        </button>
+        <a href="tel:+918466014365" class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-medium text-slate-300 hover:text-emerald-400 transition-colors">
+          +91 8466014365
+        </a>
+        <a href="#top" class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white transition-colors" aria-label="Back to top">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Copy Email with Toast Notification (Iframe-safe fallback included)
+    function copyEmail() {
+      const email = 'bhanudasari54@gmail.com';
+      const fallback = () => {
+        const textArea = document.createElement('textarea');
+        textArea.value = email;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          showToast('Copied: ' + email);
+        } catch (err) {
+          showToast('Email: ' + email);
+        }
+        document.body.removeChild(textArea);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => showToast('Copied: ' + email)).catch(fallback);
+      } else {
+        fallback();
+      }
+    }
+
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3000);
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // Interactive Skill Category Filter Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const skillCards = document.querySelectorAll('.skill-card');
+    filterButtons.forEach(b => b.setAttribute('aria-pressed', b.dataset.filter === 'all' ? 'true' : 'false'));
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selectedCategory = button.getAttribute('data-filter');
+
+        // Update active button styles
+        filterButtons.forEach(btn => {
+          btn.setAttribute('aria-pressed', 'false');
+          btn.classList.remove('bg-sky-500', 'text-slate-950', 'shadow-md', 'shadow-sky-500/20');
+          btn.classList.add('bg-slate-800/90', 'text-slate-300', 'border', 'border-slate-700');
+        });
+
+        button.classList.remove('bg-slate-800/90', 'text-slate-300', 'border', 'border-slate-700');
+        button.classList.add('bg-sky-500', 'text-slate-950', 'shadow-md', 'shadow-sky-500/20');
+        button.setAttribute('aria-pressed', 'true');
+
+        // Filter cards smoothly
+        skillCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+            card.style.display = 'block';
+            requestAnimationFrame(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            });
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
